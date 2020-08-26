@@ -1,0 +1,25 @@
+.header{
+    background-image: url("https://images.pexels.com/photos/1446161/pexels-photo-1446161.jpeg");
+    background-size: cover;
+    min-height: 500px;
+    width:100%;
+    
+    max-width:100%; 
+}
+
+.height_img{
+    height:1050px;
+    background-position:cover;
+    background-size:cover;
+    max-height:800px;
+    background-image: url('https://images.pexels.com/photos/1229414/pexels-photo-1229414.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');
+    background-repeat: no-repeat;
+    margin-top: -100px;
+  }
+
+  .fnt{
+      font-weight: 600;
+      font-family:'Open sans' ;
+      font-size: 2em;
+      line-height: 1.4em;
+  }
