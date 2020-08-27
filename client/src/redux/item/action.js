@@ -54,7 +54,7 @@ const addItem= (n,t) => {
   return dispatch => {
       dispatch(addRequest())
       return  axios.post(
-          "http://localhost:8000/items",data,header)
+          "https://shielded-brushlands-53246.herokuapp.com/items",data,header)
           .then(res=>{
           console.log("response success", res.data);
           return dispatch(addSuccess(res.data));
@@ -95,7 +95,7 @@ const fetchItems= (n) => {
   return dispatch => {
       dispatch(fetchItemRequest())
       return  axios.get(
-          `http://localhost:8000/items?page=${n}`
+          `https://shielded-brushlands-53246.herokuapp.com/items?page=${n}`
             ).then(res=>{
           console.log("response success", res.data);
           return dispatch(fetchItemSuccess(res.data));
@@ -137,7 +137,7 @@ const fetchAdminItems= (n) => {
   return dispatch => {
       dispatch(fetchAdminItemRequest())
       return  axios.get(
-          `http://localhost:8000/items/adminitems/${n}`
+          `https://shielded-brushlands-53246.herokuapp.com/items/adminitems/${n}`
             ).then(res=>{
           console.log("response success", res.data);
           return dispatch(fetchAdminItemSuccess(res.data));
@@ -176,11 +176,11 @@ const updateFailure = error => {
 
 const updateItem = (n) => {
   console.log("fetch Data called"+ n.id +" "+n.price);
-  var url = `http://localhost:8000/items/${n.id}`;
+  var url = `https://shielded-brushlands-53246.herokuapp.com/items/${n.id}`;
   console.log(url);
   return dispatch => {
       dispatch(updateRequest())
-      return  axios.patch(`http://localhost:8000/items/`+n.id,{ price:n.price })
+      return  axios.patch(`https://shielded-brushlands-53246.herokuapp.com/items/`+n.id,{ price:n.price })
       .then(res=>{
           console.log("response success", res.data);
           return (
@@ -223,7 +223,7 @@ const deleteItem= (id) => {
   return dispatch => {
       dispatch(deleteRequest())
       return  axios.delete(
-          `http://localhost:8000/items/${id}`
+          `https://shielded-brushlands-53246.herokuapp.com/items/${id}`
             ).then(res=>{
           console.log("response success", res.data);
           return dispatch(deleteSuccess(res.data));

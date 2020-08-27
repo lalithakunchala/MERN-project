@@ -42,7 +42,7 @@ const fetchUserRegister = (data) => {
   return dispatch => {
       dispatch(fetchUserRegisterRequest())
       return  axios.post(
-          "http://localhost:8000/user/register",
+          "https://shielded-brushlands-53246.herokuapp.com/user/register",
             {
             "name": `${data.name}`,
             "email": `${data.email}`,
@@ -87,7 +87,7 @@ const fetchUserLoginFailure = error => {
   return dispatch => {
       dispatch(fetchUserLoginRequest())
       return  axios.post(
-          "http://localhost:8000/user/login",
+          "https://shielded-brushlands-53246.herokuapp.com/user/login",
             {
             
             "password": `${userdetails.password}`,

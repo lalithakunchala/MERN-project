@@ -91,17 +91,17 @@ export class UserDashboard extends Component {
                
                 <div className="container">
 
-                <div style={{float:"right",flexDirection:"row",marginLeft:40}}>
+                {/* <div style={{float:"right",flexDirection:"row",marginLeft:40}}>
             {" "}
             Rating{[5,4,3,2].map(rating=>(
               <button onClick={()=>this.handleRatingChange(rating)}style={{padding:10}}>{rating}</button>
             )
             )}
-          </div>
+          </div> */}
 
           <div style={{float:"right",flexDirection:"row",marginLeft:40}}>
             {" "}
-              Price-Order:{["Ascending","Descending"].map(order=>(
+              Price-Order:{["Low-high","High-low"].map(order=>(
                 <button onClick={()=>this.handleSort(order)}style={{padding:10}}>{order}</button>
               )
               )}
