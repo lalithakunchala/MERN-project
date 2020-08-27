@@ -73,9 +73,25 @@ export class AdminDashboard extends PureComponent {
                 <NavBarAfterLogin />
                 <Link to="/additem"><button>Add saree</button></Link>
                 {this.state.update?
-                        <div>
+
+                       
+                        <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Update price</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
                             <input type="text"  onChange={this.handleChange} placeholder="price"/>
+                            </div>
+                            <div class="modal-footer">
                             <button  onClick={this.handleUpd}>Update</button>
+                            </div>
+                            </div>
+                        </div>
                         </div>
                         :
                         ""
@@ -91,7 +107,10 @@ export class AdminDashboard extends PureComponent {
                             <h5 class="card-title">{item.category} saree</h5>
                             <h5 className="text-success">Rs: {item.price}/-</h5>
                             {/* <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> */}
-                            <button id={item._id} onClick={this.handleUpdate}>Update</button>
+                            <button type="button" id={item._id} onClick={this.handleUpdate} class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                            Update
+                        </button>
+                            {/* <button id={item._id} onClick={this.handleUpdate}>Update</button> */}
                             <button onClick={()=>{this.props.deleteItem(item._id)}}>Delete</button>
                             </div>
                         </div>
