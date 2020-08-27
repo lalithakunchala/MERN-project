@@ -132,10 +132,10 @@ export class UserDashboard extends Component {
                             if(costForFilter===null){
                             return 0;
                             }
-                            if(costForFilter==='Ascending'){
+                            if(costForFilter==="Low-high"){
                             return a.price-b.price;
                             }
-                            if(costForFilter==='Descending'){
+                            if(costForFilter==='High-low'){
                             return b.price-a.price;
                             }
                             
